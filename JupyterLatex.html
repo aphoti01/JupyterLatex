@@ -13294,6 +13294,71 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bonus">Bonus<a class="anchor-link" href="#Bonus">&#182;</a></h2><p>Automatically write math style equations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">equation</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">begin{multline*} </span><span class="se">\\</span><span class="s1">begin</span><span class="si">{gathered}</span><span class="s1">&#39;</span><span class="o">+</span> <span class="n">y</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span>==0: #Used to break the equation into lines
+            <span class="n">s</span><span class="o">+=</span><span class="s1">&#39; </span><span class="se">\\</span><span class="s1">\ &#39;</span>
+        <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">to_transform</span><span class="p">:</span> <span class="c1">#In case the feature is log transformed</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39; + </span><span class="se">\\</span><span class="s1">beta_{&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;}&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">log(&#39;</span><span class="o">+</span><span class="n">col</span><span class="o">+</span><span class="s1">&#39;)&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39; + </span><span class="se">\\</span><span class="s1">beta_{&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;}&#39;</span><span class="o">+</span><span class="n">col</span>
+    <span class="n">s</span><span class="o">+=</span><span class="s1">&#39;\end</span><span class="si">{gathered}</span><span class="s1"> \end{multline*}&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">to_transform</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;punctuation_count&#39;</span><span class="p">,</span> <span class="s1">&#39;title_word_count&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;\subsection</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;{Equation 1}&#39;</span><span class="p">))</span>
+<span class="n">equation</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>\subsection{Equation 1}
+\begin{multline*} \begin{gathered}retweet_count \\  + \beta_{1}char_count + \beta_{2}word_count + \beta_{3}word_density \\  + \beta_{4}\log(punctuation_count) + \beta_{5}\log(title_word_count)\end{gathered} \end{multline*}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Step-3">Step 3<a class="anchor-link" href="#Step-3">&#182;</a></h2><p>Transform the notebook output into a .tex file.</p>
 <ol>
 <li>Use nbconvert to convert into html</li>
@@ -13307,10 +13372,10 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="ch">#!jupyter nbconvert JupyterLatex.ipynb --to html</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert JupyterLatex.ipynb --to html
 </pre></div>
 
     </div>
@@ -13320,7 +13385,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">FILE</span> <span class="o">=</span> <span class="s2">&quot;JupyterLatex.html&quot;</span>
@@ -13341,7 +13406,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
@@ -13402,7 +13467,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git pull
@@ -13412,35 +13477,6 @@ There is another theory which states that this has already happened.
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Already up to date.
-[master 4a7b951] changes
- 2 files changed, 32 insertions(+), 3 deletions(-)
-Enumerating objects: 7, done.
-Counting objects: 100% (7/7), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 786 bytes | 786.00 KiB/s, done.
-Total 4 (delta 3), reused 0 (delta 0)
-remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
-To https://github.com/aphoti01/JupyterLatex.git
-   e3f64b0..4a7b951  master -&gt; master
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
