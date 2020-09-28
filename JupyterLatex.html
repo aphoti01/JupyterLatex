@@ -13145,7 +13145,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
@@ -13165,7 +13165,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_results</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
@@ -13193,7 +13193,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;sample.csv&#39;</span><span class="p">)</span>
@@ -13206,7 +13206,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;char_count&#39;</span><span class="p">,</span> <span class="s1">&#39;word_count&#39;</span><span class="p">,</span> <span class="s1">&#39;word_density&#39;</span><span class="p">,</span> <span class="s1">&#39;punctuation_count&#39;</span><span class="p">,</span> <span class="s1">&#39;title_word_count&#39;</span><span class="p">]</span>
@@ -13220,7 +13220,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> ~ </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cols</span><span class="p">)),</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">cols</span><span class="o">+</span><span class="p">[</span><span class="n">y</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -13233,7 +13233,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">print_results</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;{Regression 1}&#39;</span><span class="p">)</span>
@@ -13262,7 +13262,7 @@ Dep. Variable:    &amp;                   &amp;                      &amp;      
 Model:            &amp;               OLS &amp;      Adj. R-squared: &amp;        0.009 \\
 Method:           &amp;     Least Squares &amp;         F-statistic: &amp;      377.200 \\
 Date:             &amp;  Mon, 28 Sep 2020 &amp;  Prob (F-statistic): &amp;        0.000 \\
-Time:             &amp;          12:48:14 &amp;      Log-Likelihood: &amp; -2166100.000 \\
+Time:             &amp;          13:01:15 &amp;      Log-Likelihood: &amp; -2166100.000 \\
 No. Observations: &amp;            200000 &amp;                 AIC: &amp;  4332000.000 \\
 Df Residuals:     &amp;            199994 &amp;                 BIC: &amp;  4332000.000 \\
 Df Model:         &amp;                 5 &amp;                  NaN &amp;          NaN \\
@@ -13301,11 +13301,11 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">equation</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">begin{multline*} </span><span class="se">\\</span><span class="s1">begin</span><span class="si">{gathered}</span><span class="s1">&#39;</span><span class="o">+</span> <span class="n">y</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">begin{multline*} </span><span class="se">\\</span><span class="s1">begin</span><span class="si">{gathered}</span><span class="s1">&#39;</span><span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="s1">&#39; = </span><span class="se">\\</span><span class="s1">beta_</span><span class="si">{0}</span><span class="s1">&#39;</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">3</span>==0: #Used to break the equation into lines
             <span class="n">s</span><span class="o">+=</span><span class="s1">&#39; </span><span class="se">\\</span><span class="s1">\ &#39;</span>
@@ -13324,7 +13324,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">to_transform</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;punctuation_count&#39;</span><span class="p">,</span> <span class="s1">&#39;title_word_count&#39;</span><span class="p">]</span>
@@ -13347,7 +13347,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>\subsection{Equation 1}
-\begin{multline*} \begin{gathered}retweet_count \\  + \beta_{1}char_count + \beta_{2}word_count + \beta_{3}word_density \\  + \beta_{4}\log(punctuation_count) + \beta_{5}\log(title_word_count)\end{gathered} \end{multline*}
+\begin{multline*} \begin{gathered}retweet_count = \beta_{0} \\  + \beta_{1}char_count + \beta_{2}word_count + \beta_{3}word_density \\  + \beta_{4}\log(punctuation_count) + \beta_{5}\log(title_word_count)\end{gathered} \end{multline*}
 </pre>
 </div>
 </div>
@@ -13359,7 +13359,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Step-3">Step 3<a class="anchor-link" href="#Step-3">&#182;</a></h2><p>Transform the notebook output into a .tex file.</p>
+<h2 id="Step-3">Step 3<a class="anchor-link" href="#Step-3">&#182;</a></h2><p>Transform the notebook output into a .tex file. (<strong><em>Save notebook before proceeding</em></strong>)</p>
 <ol>
 <li>Use nbconvert to convert into html</li>
 <li>Filter out input cells</li>
@@ -13372,7 +13372,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>jupyter nbconvert JupyterLatex.ipynb --to html
@@ -13385,7 +13385,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">FILE</span> <span class="o">=</span> <span class="s2">&quot;JupyterLatex.html&quot;</span>
@@ -13406,7 +13406,7 @@ title\_word\_count  &amp;    -67.5962 &amp;    8.512 &amp;  -7.941 &amp;      0.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
@@ -13467,7 +13467,7 @@ There is another theory which states that this has already happened.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git pull
